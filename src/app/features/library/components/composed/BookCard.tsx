@@ -1,0 +1,2 @@
+import type {Book} from '../../models/library'; import {IconTrash} from '@tabler/icons-react';
+export function BookCard({book,onOpen,onDelete}:{book:Book;onOpen:()=>void;onDelete:()=>void}){return <article className="book"><button className="book-open" onClick={onOpen}><span className="cover">PDF</span><span><strong>{book.name}</strong><small>{(book.size/1048576).toFixed(1)} MB · {Math.round(book.progress*100)}% leído</small></span></button><button className="icon" aria-label={`Eliminar ${book.name}`} onClick={onDelete}><IconTrash size={20}/></button></article>}

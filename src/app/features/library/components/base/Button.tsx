@@ -1,0 +1,1 @@
+import type {ButtonHTMLAttributes,ReactNode} from 'react'; export function Button({children,...props}:{children:ReactNode}&ButtonHTMLAttributes<HTMLButtonElement>){return <button {...props}>{children}</button>}

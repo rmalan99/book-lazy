@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Vite and production output
+dist/
+.vite/
+
+# Playwright reports and artifacts
+playwright-report/
+test-results/
+blob-report/
+
+# Logs
+*.log
+logs/
+
+# Environment files (keep templates/versioned examples)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Operating system and editor metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.swp
+*.swo

@@ -1,0 +1,43 @@
+- [x] **WEB-001 — Base PWA React funcional**
+  - Ámbito: Web
+  - Objetivo: crear la aplicación Vite/React con tema visual y shell responsive.
+  - Alcance: configuración raíz, `src/app`, estilos y dependencias.
+  - Fuera de alcance: backend, autenticación y almacenamiento remoto.
+  - Dependencias: ninguna.
+  - Criterios de aceptación: la app inicia, compila y muestra biblioteca vacía accesible.
+  - Validación: `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`.
+  - Responsable: Subagente Web.
+  - Evidencia: lint, typecheck, tests y build pasan.
+
+- [x] **WEB-002 — Biblioteca PDF local**
+  - Ámbito: Web
+  - Objetivo: importar, listar y eliminar PDF usando IndexedDB.
+  - Alcance: feature library, persistencia local y estados vacío/error.
+  - Fuera de alcance: sincronización o API.
+  - Dependencias: WEB-001.
+  - Criterios de aceptación: un PDF importado sobrevive al reload y puede eliminarse.
+  - Validación: pruebas unitarias y flujo manual.
+  - Responsable: Subagente Web.
+  - Evidencia: persistencia Dexie/IndexedDB implementada y validada con tests de modelo.
+
+- [x] **WEB-003 — Lector PDF y progreso**
+  - Ámbito: Web
+  - Objetivo: renderizar páginas, navegar, aplicar zoom/tema y guardar progreso.
+  - Alcance: lector de feature library y PDF.js.
+  - Fuera de alcance: extracción de texto refluido y EPUB.
+  - Dependencias: WEB-002.
+  - Criterios de aceptación: abre un libro, navega, restaura página/zoom y vuelve a biblioteca.
+  - Validación: `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build` y flujo manual.
+  - Responsable: Subagente Web.
+  - Evidencia: lector PDF.js con navegación, zoom, tema y progreso persistido; build pasa.
+
+- [x] **WEB-004 — Instalabilidad y offline**
+  - Ámbito: Web
+  - Objetivo: configurar manifest y service worker para instalar y cargar la app offline.
+  - Alcance: configuración PWA y assets públicos.
+  - Fuera de alcance: sincronización de libros entre dispositivos.
+  - Dependencias: WEB-001.
+  - Criterios de aceptación: build genera manifest/service worker y la app es instalable.
+  - Validación: `pnpm build` y revisión de artefactos.
+  - Responsable: Subagente Web.
+  - Evidencia: manifest, service worker y worker PDF local generados en `dist/`.
